@@ -1,0 +1,7 @@
+
+<%= form_for @vehicle do |veh| %>
+	Model: <%= veh.text_field :model %>
+	Plate: <%= veh.text_field :plate %>
+	Company: <%= veh.collection_select(:company_id, Company.all, :id, :name) %>
+	<%= veh.submit 'Save' %>
+<% end %>

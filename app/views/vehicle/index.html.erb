@@ -1,0 +1,29 @@
+<h2>Veículos</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Placa</th>
+      <th>Empresa</th>
+      <th colspan="30"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |v| %>
+      <tr>
+        <td><strong><%= v.model %></strong> </td>
+        <td><%= v.plate %></td>
+        <td><%= v.company.name if v.company %> </td>
+        <td><%= link_to 'Edit', '' %> </td>
+        <td><%= link_to 'Deletar', vehicles_path(v), method: "delete"  %> </td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+<%= link_to "Add new vehicle", vehicles_new_path %><br>
+<%= link_to "Home", root_path %>
+

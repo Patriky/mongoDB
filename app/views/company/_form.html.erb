@@ -1,0 +1,6 @@
+<%= form_for @company do |c| %>
+	Name: <%= c.text_field :name %>
+	City: <%= c.text_field :city %>	
+	Active: <%= c.check_box :is_active %>	
+	<%= c.submit %>
+<% end %>

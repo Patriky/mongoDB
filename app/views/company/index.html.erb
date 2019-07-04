@@ -1,0 +1,27 @@
+<h2>Lista de empresas cadastras</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Active</th>
+      <th colspan="30"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |comp| %>
+      <tr>
+        <td><strong><%= comp.name %></strong> --- </td>
+        <td><%= comp.city %></td>
+        <td><%= comp.is_active %></td>
+        <td><%= link_to 'Edit', '' %> </td>
+
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add new company", companies_new_path %><br>
+<%= link_to "Home", root_path %>
