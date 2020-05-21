@@ -1,6 +1,18 @@
-<%= form_for @company do |c| %>
-	Name: <%= c.text_field :name %>
-	City: <%= c.text_field :city %>	
-	Active: <%= c.check_box :is_active %>	
-	<%= c.submit %>
-<% end %>
+<div data-controller="company">
+	<%= form_for @company do |c| %>
+		Name: <%= c.text_field :name, data: {
+			target: "company.name",
+			action: "change->company#toUpper" 
+
+		}
+		%>
+		City: <%= c.text_field :city, data: {
+			target: "company.city",
+			action: "select->company#select"
+		} %>	
+		Active: <%= c.check_box :is_active %>	
+		<%= c.submit %>
+
+	<% end %>
+
+</div>

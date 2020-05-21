@@ -1,5 +1,5 @@
 class VehicleController < ApplicationController
-	before_action :set_vehicle, only: [:edit]
+	before_action :set_vehicle, only: [:edit, :destroy, :show]
 
 	# GET /vehicles/index
 	def index
@@ -13,7 +13,9 @@ class VehicleController < ApplicationController
 
 	# GET /vehicles/:id/edit
 	def edit
-		
+	end
+
+	def show		
 	end
 
 	# post /vehicles
@@ -28,6 +30,27 @@ class VehicleController < ApplicationController
 				format.new
 			end
 		end
+	end
+
+	def update
+		if @vehicle.update(vehicle_params)
+			
+		else
+			puts "@"*100
+			puts "Update fail"
+			puts "@"*100
+		end
+
+			
+	end
+
+	# delete /vehicles/:id 
+	def destroy
+		puts "@"*100
+		puts "Entrou no destroy"
+		puts "@"*100
+		@vehicle.destroy
+		redirect_to(action: "index")
 	end
 
 	private

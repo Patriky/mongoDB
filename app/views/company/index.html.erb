@@ -16,7 +16,9 @@
         <td><strong><%= comp.name %></strong> --- </td>
         <td><%= comp.city %></td>
         <td><%= comp.is_active %></td>
-        <td><%= link_to 'Edit', '' %> </td>
+        <td><%= link_to 'Edit', edit_company_path(comp) %> </td>
+        <td><%= link_to 'Show', '/' %> </td>
+        <td><%= link_to 'De', '/' %> </td>
 
        
       </tr>
@@ -25,3 +27,13 @@
 </table>
 <%= link_to "Add new company", companies_new_path %><br>
 <%= link_to "Home", root_path %>
+
+<br>
+<br>
+<br>
+<div data-controller = "hello">
+  <textarea data-target='hello.text' type= 'text'></textarea>
+  <button data-action= "click->hello#write">Teste</button>
+  <h3 data-target='hello.printer'></h3>
+
+</div>
